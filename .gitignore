@@ -1,2 +1,5 @@
 # NodeJS Modules folder
 /node_modules
+
+# NodeJS package-lock file
+package-lock.json
