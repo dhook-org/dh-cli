@@ -16,7 +16,7 @@ export class app {
             const commands_categories = commands_config.categories;
 
             let commands = "";
-            for (category in commands_categories) {
+            for (let category in commands_categories) {
                 commands += "/t" + category + ":"
             }
 

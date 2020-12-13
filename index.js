@@ -8,4 +8,4 @@ import { app } from "./src/app.js";
 
 let cli = new app().run(argv);
 
-export { app };
+export { cli };
