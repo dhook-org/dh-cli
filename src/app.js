@@ -1,4 +1,13 @@
-const argv = process.argv;
-argv.splice(0, 2);
 
-module.exports = { argv };
+
+export class app {
+
+    constructor() {
+        this.argv = null;
+    }
+
+    run(argv) {
+        this.argv = argv;
+    }
+
+}
