@@ -1,0 +1,14 @@
+{
+    "commands": [
+        {
+            "name": "management",
+            "commands": [
+                {
+                    "name": "register",
+                    "description": "Register a new webhook to your user profile."
+                }
+            ]    
+        }
+    ],
+    "categories": ["management"]
+}
