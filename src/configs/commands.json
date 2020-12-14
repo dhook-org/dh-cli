@@ -1,5 +1,5 @@
 {
-    "commands": [
+    "categories": [
         {
             "name": "management",
             "commands": [
@@ -9,6 +9,5 @@
                 }
             ]    
         }
-    ],
-    "categories": ["management"]
+    ]
 }
