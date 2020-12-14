@@ -1,6 +1,15 @@
 {
     "categories": [
         {
+            "name": "General",
+            "commands": [
+                {
+                    "name": "help",
+                    "description": "Show the commands list & help."
+                }
+            ]
+        },
+        {
             "name": "Management",
             "commands": [
                 {
