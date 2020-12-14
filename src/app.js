@@ -1,6 +1,5 @@
 import kleur from "kleur";
 import { jsonRequire } from "./functions/jsonRequire.js";
-import fs from "fs";
 
 export class app {
 
