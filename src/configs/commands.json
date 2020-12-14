@@ -1,7 +1,7 @@
 {
     "categories": [
         {
-            "name": "management",
+            "name": "Management",
             "commands": [
                 {
                     "name": "register",
