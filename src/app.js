@@ -1,5 +1,5 @@
-import kleur from "kleur";
-import { jsonRequire } from "./utils/jsonRequire.js";
+// Functions import
+import { help } from "./functions/helpdisplay.js";
 
 export class app {
 
@@ -10,21 +10,15 @@ export class app {
     async run(argv) {
         this.argv = argv;
         
-        // default command response, will show commands list if no args are passed.
-        if (argv[0] == null) {
-            const commands_config = await jsonRequire("configs/commands.json");
-            const categories = commands_config.categories;
+        switch (argv[0]) {
+            // Help command, will display every single commands of dh-cli.
+            case "help":
+                help(false); 
+                break;
 
-            let commands = "";
-            for (let category in categories) {
-                commands += "\n\t" + categories[category].name + ":\n";
-                for (let command in categories[category].commands) {
-                    command = categories[category].commands[command];
-                    commands += "\t- " + command.name + ((command.name.length < 6) ? "\t": "") + "\t| " + command.description + "\n";
-                }
-            }
-
-            console.log(`${kleur.red("[ERROR]")} please specify an argument.\n${commands}`);
+            // default command response, will show commands list if no args are passed or unknown command is called.
+            default:
+                help(true);
         }
     }
 
