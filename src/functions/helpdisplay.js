@@ -1,8 +1,9 @@
 import kleur from "kleur";
 import { jsonRequire } from "../utils/jsonRequire.js";
+import { cli } from "../../index.js";
 
 export async function help(isDefault = false) {
-    const commands_config = await jsonRequire("configs/commands.json");
+    const commands_config = await jsonRequire(cli.current + "/src/configs/commands.json").catch(error => { throw error });
     const categories = commands_config.categories;
 
     let commands = "";
