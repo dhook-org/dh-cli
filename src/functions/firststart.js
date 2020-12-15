@@ -8,6 +8,7 @@ import yaml from "yaml";
 // Internal imports
 import { cli } from "../../index.js";
 import { sleep } from "../utils/sleep.js";
+import { jsonRequire } from "../utils/jsonRequire.js";
 
 export async function firstStart() {
 
@@ -26,13 +27,15 @@ async function setupConfig() {
 
 async function display() {
 
-    let text = kleur.green("-------------------------------------\n");
+    let text = kleur.green("\n-------------------------------------\n");
     figlet("DH-CLI", (error, data) => {
         if (error) throw error;
         text += kleur.blue(data);
     });
     await sleep(1000);
-    text += kleur.green("\n-------------------------------------");
-    console.log(text)
+    text += kleur.green("\n-------------------------------------\n");
+    const package_data = await jsonRequire(cli.current + "\\package.json");
+    text += `\n${kleur.blue().bold("Name: ") + package_data.name}\n${kleur.blue().bold("Version: ") + package_data.version}\n${kleur.blue().bold("Author: ") + "dhook-org"}`;
+    console.log(text);
 
 }
