@@ -1,5 +1,8 @@
 // Functions import
 import { help } from "./functions/helpdisplay.js";
+import { firstStart } from "./functions/firststart.js";
+
+// Modules imports
 import { getInstalledPath } from "get-installed-path";
 import fs from "fs";
 
@@ -28,9 +31,7 @@ export class app {
                 default:
                     await help(true);
             }
-        } else {
-            console.log(false)
-        }
+        } else firstStart();
 
     }
 
