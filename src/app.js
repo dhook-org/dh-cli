@@ -31,7 +31,7 @@ export class app {
                 default:
                     await help(true);
             }
-        } else firstStart();
+        } else { this.config_path = process.env.HOMEDRIVE + process.env.HOMEPATH + "\\.dh"; firstStart(); }
 
     }
 
