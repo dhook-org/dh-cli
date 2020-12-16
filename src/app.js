@@ -1,5 +1,5 @@
 // Functions import
-import { help } from "./functions/helpdisplay.js";
+import { help, commandHelp } from "./functions/helpdisplay.js";
 import { firstStart } from "./functions/firststart.js";
 
 // Modules imports
@@ -24,7 +24,8 @@ export class app {
             switch (this.argv[0]) {
                 // Help command, will display every single commands of dh-cli.
                 case "help":
-                    await help(false); 
+                    if (this.argv[1] == undefined) await help(false);
+                    else await commandHelp(this.argv[1]); 
                     break;
     
                 // default command response, will show commands list if no args are passed or unknown command is called.
