@@ -5,7 +5,8 @@
             "commands": [
                 {
                     "name": "help",
-                    "description": "Show the commands list & help."
+                    "description": "Show the commands list & help.",
+                    "use": "dh help [command]"
                 }
             ]
         },
@@ -14,7 +15,8 @@
             "commands": [
                 {
                     "name": "register",
-                    "description": "Register a new webhook to your user profile."
+                    "description": "Register a new webhook to your user profile.",
+                    "use": ""
                 }
             ]    
         }
