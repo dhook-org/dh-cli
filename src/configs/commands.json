@@ -6,7 +6,7 @@
                 {
                     "name": "help",
                     "description": "Show the commands list & help.",
-                    "use": "dh help [command]"
+                    "use": "dh help [command]\n\t     Was it really usefull ?"
                 }
             ]
         },
