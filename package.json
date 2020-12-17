@@ -1,5 +1,5 @@
 {
-  "name": "dh-cli",
+  "name": "dhook-cli",
   "version": "0.0.1",
   "description": "CLI app permitting Discord WebHook management",
   "main": "index.js",
