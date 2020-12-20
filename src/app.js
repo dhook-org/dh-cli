@@ -1,6 +1,7 @@
 // Functions import
 import { help, commandHelp } from "./functions/helpdisplay.js";
 import { firstStart } from "./functions/firststart.js";
+import { register } from "./functions/register.js";
 
 // Modules imports
 import { getInstalledPath } from "get-installed-path";
@@ -22,6 +23,10 @@ export class app {
         if (await this.getConfigPath() !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
+                case "register":
+                    await register();
+                    break;
+
                 // Help command, will display every single commands of dh-cli.
                 case "help":
                     if (this.argv[1] == undefined) await help(false);
