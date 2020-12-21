@@ -2,6 +2,7 @@
 import { help, commandHelp } from "./functions/helpdisplay.js";
 import { firstStart } from "./functions/firststart.js";
 import { register } from "./functions/register.js";
+import { unregister } from "./functions/unregister.js";
 
 // Modules imports
 import { getInstalledPath } from "get-installed-path";
@@ -23,6 +24,10 @@ export class app {
         if (await this.getConfigPath() !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
+                case "unregister":
+                    await unregister();
+                    break;
+
                 case "register":
                     await register();
                     break;

@@ -6,7 +6,7 @@
                 {
                     "name": "help",
                     "description": "Show the commands list & help.",
-                    "use": "dh help [command]\n\t     Was it really usefull ?"
+                    "use": "dh help [command]\n\t     Was it really useful ?"
                 }
             ]
         },
@@ -17,6 +17,11 @@
                     "name": "register",
                     "description": "Register a new webhook to your user profile.",
                     "use": "dh register [Hook ID] [Hook Link]"
+                },
+                {
+                    "name": "unregister",
+                    "description": "Remove a registered WebHook from your user profile.",
+                    "use": "dh unregister <Hook ID>"
                 }
             ]    
         }
