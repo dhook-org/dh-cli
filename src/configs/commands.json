@@ -16,7 +16,7 @@
                 {
                     "name": "register",
                     "description": "Register a new webhook to your user profile.",
-                    "use": ""
+                    "use": "dh register [Hook ID] [Hook Link]"
                 }
             ]    
         }
