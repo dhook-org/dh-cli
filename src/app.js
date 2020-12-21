@@ -7,6 +7,7 @@ import { unregister } from "./functions/unregister.js";
 // Modules imports
 import { getInstalledPath } from "get-installed-path";
 import fs from "fs";
+import { listHooks } from "./functions/listhooks.js";
 
 export class app {
 
@@ -24,6 +25,10 @@ export class app {
         if (await this.getConfigPath() !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
+                case "list":
+                    await listHooks();
+                    break;
+
                 case "unregister":
                     await unregister();
                     break;

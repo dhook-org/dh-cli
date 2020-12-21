@@ -22,6 +22,11 @@
                     "name": "unregister",
                     "description": "Remove a registered WebHook from your user profile.",
                     "use": "dh unregister <Hook ID>"
+                },
+                {
+                    "name": "list",
+                    "description": "List all links registered on your user profile.",
+                    "use": "dh list"
                 }
             ]    
         }
