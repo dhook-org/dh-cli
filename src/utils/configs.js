@@ -2,8 +2,6 @@ import fsp from "fs/promises";
 import fs from "fs";
 import { cli } from "../../index.js";
 import yaml from "yaml";
-import { resolve } from "path";
-import { rejects } from "assert";
 
 export async function getConfig(file) {
     return new Promise((resolve, rejects) => {
