@@ -21,7 +21,7 @@ export async function firstStart() {
 
 const setupConfig = async () => {
 
-    await fs.appendFile(cli.config_path + "\\hooks", yaml.stringify({ hooks: [] }), error => { throw error; });
+    await fs.appendFile(cli.config_path + "\\hooks", yaml.stringify({ hooks: { default: null } }), error => { throw error; });
 
 }
 
