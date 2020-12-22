@@ -11,6 +11,16 @@
             ]
         },
         {
+            "name": "WebHook Interaction",
+            "commands": [
+                {
+                    "name": "send",
+                    "description": "Sends a message to a Discord channel through a WebHook API call.",
+                    "use": "dh send <hook> <-m \"message\" | -f file.json>"
+                }
+            ]
+        },  
+        {
             "name": "Management",
             "commands": [
                 {

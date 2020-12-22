@@ -8,6 +8,7 @@ import { unregister } from "./functions/unregister.js";
 import { getInstalledPath } from "get-installed-path";
 import fs from "fs";
 import { listHooks } from "./functions/listhooks.js";
+import { send } from "./functions/webhookpost.js";
 
 export class app {
 
@@ -25,6 +26,10 @@ export class app {
         if (await this.getConfigPath() !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
+                case "send":
+                    await send()    
+                    break;
+                    
                 case "list":
                     await listHooks();
                     break;
