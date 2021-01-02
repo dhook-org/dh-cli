@@ -20,7 +20,7 @@ export async function send() {
         console.log(`${kleur.green("✔")} ${kleur.blue("Your message was successfully sent.")}`);
     }
     else if (cli.argv.indexOf("-f")) {
-        let file_index = cli.argv.indexOf("-j") + 1;
+        let file_index = cli.argv.indexOf("-f") + 1;
         jsonRequire("./" + cli.argv[file_index])
             .then(json => {
                 const data = {
