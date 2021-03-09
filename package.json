@@ -1,6 +1,6 @@
 {
-  "name": "dh-cli",
-  "version": "0.0.1-Alpha",
+  "name": "dhook-cli",
+  "version": "0.0.1",
   "description": "CLI app permitting Discord WebHook management",
   "main": "index.js",
   "type": "module",
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IchiiDev/dh-cli.git"
+    "url": "git+https://github.com/dhook-org/dh-cli.git"
   },
   "keywords": [
     "CLI",
     "Discord",
     "Webhook"
   ],
-  "author": "Ichii",
+  "author": "ichii",
   "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/dhook-org/dh-cli/issues"

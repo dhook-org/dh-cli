@@ -1,10 +1,14 @@
 // Functions import
-import { help } from "./functions/helpdisplay.js";
+import { help, commandHelp } from "./functions/helpdisplay.js";
 import { firstStart } from "./functions/firststart.js";
+import { register } from "./functions/register.js";
+import { unregister } from "./functions/unregister.js";
 
 // Modules imports
 import { getInstalledPath } from "get-installed-path";
 import fs from "fs";
+import { listHooks } from "./functions/listhooks.js";
+import { send } from "./functions/webhookpost.js";
 
 export class app {
 
@@ -22,9 +26,26 @@ export class app {
         if (await this.getConfigPath() !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
+                case "send":
+                    await send()    
+                    break;
+                    
+                case "list":
+                    await listHooks();
+                    break;
+
+                case "unregister":
+                    await unregister();
+                    break;
+
+                case "register":
+                    await register();
+                    break;
+
                 // Help command, will display every single commands of dh-cli.
                 case "help":
-                    await help(false); 
+                    if (this.argv[1] == undefined) await help(false);
+                    else await commandHelp(this.argv[1]); 
                     break;
     
                 // default command response, will show commands list if no args are passed or unknown command is called.

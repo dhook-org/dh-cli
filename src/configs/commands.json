@@ -5,16 +5,38 @@
             "commands": [
                 {
                     "name": "help",
-                    "description": "Show the commands list & help."
+                    "description": "Show the commands list & help.",
+                    "use": "dh help [command]\n\t     Was it really useful ?"
                 }
             ]
         },
+        {
+            "name": "WebHook Interaction",
+            "commands": [
+                {
+                    "name": "send",
+                    "description": "Sends a message to a Discord channel through a WebHook API call.",
+                    "use": "dh send <hook> <-m \"message\" | -f file.json>"
+                }
+            ]
+        },  
         {
             "name": "Management",
             "commands": [
                 {
                     "name": "register",
-                    "description": "Register a new webhook to your user profile."
+                    "description": "Register a new webhook to your user profile.",
+                    "use": "dh register [Hook ID] [Hook Link]"
+                },
+                {
+                    "name": "unregister",
+                    "description": "Remove a registered WebHook from your user profile.",
+                    "use": "dh unregister <Hook ID>"
+                },
+                {
+                    "name": "list",
+                    "description": "List all links registered on your user profile.",
+                    "use": "dh list"
                 }
             ]    
         }

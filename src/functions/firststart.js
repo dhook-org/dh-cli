@@ -19,13 +19,13 @@ export async function firstStart() {
 
 }
 
-async function setupConfig() {
+const setupConfig = async () => {
 
-    await fs.appendFile(cli.config_path + "\\hooks", yaml.stringify({ hooks: [] }), error => { throw error; });
+    await fs.appendFile(cli.config_path + "\\hooks", yaml.stringify({ hooks: { default: null } }), error => { throw error; });
 
 }
 
-async function display() {
+const display = async () => {
 
     let text = kleur.green("\n-------------------------------------\n");
     figlet("DH-CLI", (error, data) => {
