@@ -19,11 +19,14 @@ export class app {
     }
 
     async run() {
-        this.current = await getInstalledPath("dh-cli").catch(err => {
+        this.current = await getInstalledPath("dh-cli").catch(() => {
             throw "Can't find dh-cli path. Is it installed globally ?";
         });
         
-        if (await this.getConfigPath() !== false) {
+        let config = await this.getConfigPath();
+        console.log()
+
+        if (config !== false) {
             this.config_path = await this.getConfigPath();
             switch (this.argv[0]) {
                 case "send":
@@ -52,25 +55,33 @@ export class app {
                 default:
                     await help(true);
             }
-        } else { this.config_path = process.env.HOMEDRIVE + process.env.HOMEPATH + "\\.dh"; firstStart(); }
+        } else { 
+            this.config_path = await this.getConfigPath();
+            firstStart();
+        }
 
     }
 
     async getConfigPath() {
-        let homepath;
-        if (process.env.OS.includes("Windows")) homepath = process.env.HOMEDRIVE + process.env.HOMEPATH;
-        else homepath = process.env.HOMEPATH;
-        
-        if (fs.existsSync(homepath + "\\.dh")) return homepath + "\\.dh";
-        else {
-
-            fs.mkdir(homepath + "\\.dh", (err) => {
-                if (err) throw err;
-            });
+        return new Promise((resolve) => {
+            // console.log("a")
+            let homepath;
+            if (process.env.OS.includes("Windows")) homepath = process.env.HOMEDRIVE + process.env.HOMEPATH;
+            else homepath = process.env.HOMEPATH;
             
-            return false;
+            // console.log(fs.existsSync(homepath + "\\.dh"))
+            if (fs.existsSync(homepath + "\\.dh")) resolve(homepath + "\\.dh");
+            else {
+    
+                fs.mkdir(homepath + "\\.dh", (err) => {
+                    if (err) throw err;
+                });
+                
+                resolve(false);
+    
+            } 
 
-        } 
+        });
 
     }
 
